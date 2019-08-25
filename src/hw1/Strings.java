@@ -1,7 +1,8 @@
-package prereq;
+//package prereq;
 
 public class Strings
 {
+	
    public static String uniqueLetters(String str)
    {
 	   String endResult = str;
