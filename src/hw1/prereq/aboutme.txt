@@ -8,6 +8,6 @@ Place and semester where you took a programming course in Java: SJSU Spring 2018
 Course number and grade received: CS46B - A
 Place and semester where you took a course in data structures: SJSU Fall 2018
 Course number and grade received: CS146 - B
-Time it took you to answer the two questions below:
-Did you ask anyone for help? [ ] Yes, [ ] No
+Time it took you to answer the two questions below: ~ 1 hour +/- 10 min
+Did you ask anyone for help? [ ] Yes, [X] No
 
