@@ -9,32 +9,38 @@ import javax.swing.*;
    a car shape.
 */
 public class AnimationTester
-{
+{	
 	public static void zoomIn(CarIcon car, JLabel label)
 	{
-		car.grow();
+		car.width+=20;
+		label.setIcon(new CarIcon(car.width));
 		label.repaint();
 	}
 	
 	public static void zoomOut(CarIcon car, JLabel label)
 	{
-		car.shrink();
+		car.width-=20;
+		label.setIcon(new CarIcon(car.width));
 		label.repaint();
 	}
 	
+	
    public static void main(String[] args)
    {
-      JFrame frame = new JFrame();
-
+      JFrame frame = new JFrame();      
       CarIcon car = new CarIcon(100);
       
       final JLabel label = new JLabel(car);
       
       JButton zoomIn = new JButton("Zoom In");
-      zoomIn.addActionListener(event -> zoomIn(car, label));
+      zoomIn.addActionListener(event -> {
+    	  zoomIn(car, label);
+	  });
       
       JButton zoomOut = new JButton("Zoom Out");
-      zoomOut.addActionListener(event -> zoomOut(car, label));
+      zoomOut.addActionListener(event -> {
+    	  zoomOut(car, label);
+      });
       
       
       frame.setLayout(new FlowLayout());

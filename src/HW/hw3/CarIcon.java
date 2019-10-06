@@ -9,6 +9,7 @@ import javax.swing.*;
 */
 public class CarIcon implements Icon
 {
+	public int width;
    /**
       Constructs a car of a given width.
       @param width the width of the car
@@ -79,8 +80,6 @@ public class CarIcon implements Icon
       g2.draw(roofTop);
       g2.draw(rearWindshield);
    }
-
-   private int width;
 }
 
 
