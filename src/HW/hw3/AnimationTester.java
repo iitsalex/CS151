@@ -27,14 +27,7 @@ public class AnimationTester
       JFrame frame = new JFrame();
 
       CarIcon car = new CarIcon(100);
-//      final GrowableIcon shape
-//            = new CarIcon(0, 0, CAR_WIDTH);
-//
-//      ShapeIcon icon = new ShapeIcon(shape,
-//            ICON_WIDTH, ICON_HEIGHT);
       
-      
-
       final JLabel label = new JLabel(car);
       
       JButton zoomIn = new JButton("Zoom In");
