@@ -10,15 +10,15 @@ import javax.swing.*;
 */
 public class AnimationTester
 {
-	public static void zoomIn(GrowableIcon shape, JLabel label)
+	public static void zoomIn(CarIcon car, JLabel label)
 	{
-		shape.grow();
+		car.grow();
 		label.repaint();
 	}
 	
-	public static void zoomOut(GrowableIcon shape, JLabel label) 
+	public static void zoomOut(CarIcon car, JLabel label)
 	{
-		shape.shrink();
+		car.shrink();
 		label.repaint();
 	}
 	
@@ -26,19 +26,22 @@ public class AnimationTester
    {
       JFrame frame = new JFrame();
 
-      final GrowableIcon shape
-            = new CarIcon(0, 0, CAR_WIDTH);
+      CarIcon car = new CarIcon(100);
+//      final GrowableIcon shape
+//            = new CarIcon(0, 0, CAR_WIDTH);
+//
+//      ShapeIcon icon = new ShapeIcon(shape,
+//            ICON_WIDTH, ICON_HEIGHT);
+      
+      
 
-      ShapeIcon icon = new ShapeIcon(shape,
-            ICON_WIDTH, ICON_HEIGHT);
-
-      final JLabel label = new JLabel(icon);
+      final JLabel label = new JLabel(car);
       
       JButton zoomIn = new JButton("Zoom In");
-      zoomIn.addActionListener(event -> zoomIn(shape, label));
+      zoomIn.addActionListener(event -> zoomIn(car, label));
       
       JButton zoomOut = new JButton("Zoom Out");
-      zoomOut.addActionListener(event -> zoomOut(shape, label));
+      zoomOut.addActionListener(event -> zoomOut(car, label));
       
       
       frame.setLayout(new FlowLayout());
@@ -51,8 +54,4 @@ public class AnimationTester
       frame.setVisible(true);
 
    }
-
-   private static final int ICON_WIDTH = 400;
-   private static final int ICON_HEIGHT = 100;
-   private static final int CAR_WIDTH = 100;
 }
