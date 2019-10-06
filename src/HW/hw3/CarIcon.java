@@ -29,16 +29,6 @@ public class CarIcon implements Icon
       return width / 2;
    }
    
-   public void grow()
-   {
-	   width += 20;
-   }
-   
-   public void shrink()
-   {
-	   width -= 20;
-   }
-
    public void paintIcon(Component c, Graphics g, int x, int y)
    {
       Graphics2D g2 = (Graphics2D) g;
