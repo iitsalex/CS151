@@ -27,22 +27,28 @@ public class AnimationTester
 	
    public static void main(String[] args)
    {
+	  // create frame
       JFrame frame = new JFrame();      
+      
+      // create initial car object
       CarIcon car = new CarIcon(100);
       
+      // create label for painting
       final JLabel label = new JLabel(car);
       
+      // add zoomIn button and lambda expression for zoomIn functionality
       JButton zoomIn = new JButton("Zoom In");
       zoomIn.addActionListener(event -> {
     	  zoomIn(car, label);
 	  });
       
+      // add zoomOut button and lambda expression for zoomOut functionality
       JButton zoomOut = new JButton("Zoom Out");
       zoomOut.addActionListener(event -> {
     	  zoomOut(car, label);
       });
       
-      
+      // Set FlowLayout and add buttons + label
       frame.setLayout(new FlowLayout());
       frame.add(zoomIn);
       frame.add(zoomOut);
