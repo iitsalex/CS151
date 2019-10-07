@@ -13,9 +13,9 @@ public String formatHeader()
 
 public String formatLineItem(LineItem item)
 {
-   total += item.getPrice();
+   total += (item.getPrice() * item.getDuplicates());
    return (String.format(
-         "%s: $%.2f\n",item.toString(),item.getPrice()));
+         "%s: $%.2f x%d\n",item.toString(),item.getPrice(),item.getDuplicates()));
 }
 
 public String formatFooter()

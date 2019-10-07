@@ -10,7 +10,8 @@ import javax.swing.event.*;
 */
 public class InvoiceTester
 {
-   public static void main(String[] args)
+   @SuppressWarnings({ "unchecked", "rawtypes" })
+public static void main(String[] args)
    {
       final Invoice invoice = new Invoice();
       final InvoiceFormatter formatter = new SimpleFormatter();

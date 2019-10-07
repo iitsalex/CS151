@@ -10,7 +10,11 @@ public class Bundle implements LineItem
    /**
       Constructs a bundle with no items.
    */
-   public Bundle() { items = new ArrayList<>(); }
+   public Bundle() 
+   {
+	   items = new ArrayList<>();
+	   this.duplicates = 1;
+   }
 
    /**
       Adds an item to the bundle.
@@ -38,5 +42,17 @@ public class Bundle implements LineItem
       return description;
    }
 
+   public int getDuplicates() 
+   {
+	   return duplicates;
+   }
+   
+   public int increaseDuplicates() 
+   {
+	   duplicates++;
+	   return duplicates;
+   }
+   
+   private int duplicates;
    private ArrayList<LineItem> items;
 }

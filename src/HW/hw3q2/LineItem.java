@@ -5,6 +5,7 @@ A line item in an invoice.
 */
 public interface LineItem
 {
+	
 /**
    Gets the price of this line item.
    @return the price
@@ -15,4 +16,7 @@ double getPrice();
    @return the description
 */   
 String toString();
+
+int getDuplicates();
+int increaseDuplicates();
 }

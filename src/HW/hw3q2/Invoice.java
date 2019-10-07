@@ -23,7 +23,11 @@ public class Invoice
    */
    public void addItem(LineItem item)
    {
-      items.add(item);
+      if (!items.contains(item)){
+    	  items.add(item);
+      }else{
+    	item.increaseDuplicates();
+      }
       // Notify all observers of the change to the invoice
       ChangeEvent event = new ChangeEvent(this);
       for (ChangeListener listener : listeners)
@@ -66,7 +70,7 @@ public class Invoice
             private int current = 0;
          };
    }
-
+   
    public String format(InvoiceFormatter formatter)
    {
       String r = formatter.formatHeader();

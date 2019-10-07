@@ -14,6 +14,7 @@ public DiscountedItem(LineItem item, double discount)
 { 
    this.item = item; 
    this.discount = discount;
+   this.duplicates = 1;
 }
 
 public double getPrice() 
@@ -25,8 +26,18 @@ public String toString()
 {
    return item.toString() + " (Discount " + discount
       + "%)";
-} 
+}
+
+public int getDuplicates() {
+	return duplicates;
+}
+
+public int increaseDuplicates() {
+	duplicates++;
+	return duplicates;
+}
 
 private LineItem item;
 private double discount;
+private int duplicates;
 }
