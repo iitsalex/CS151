@@ -1,4 +1,4 @@
-package hw3;
+package hw3q1;
 
 import java.awt.*;
 import java.awt.event.*;
