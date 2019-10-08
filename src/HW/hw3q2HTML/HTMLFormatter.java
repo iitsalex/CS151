@@ -17,7 +17,7 @@ public String formatLineItem(LineItem item)
 {
    total += (item.getPrice() * item.getDuplicates());
    return (String.format(
-         "<p style=color:yellow;font-size:16px;'>" + "<em>\n%s: <span style='color:rgb(0,197,42);'>$%.2f</span>" + 
+         "<p style=color:yellow;font-size:16px;'>" + "<em>\n%s: <span style='color:rgb(2,111,0);'>$%.2f</span>" + 
         		 "<span style='color:rgb(255,0,162);'> (x%d)</span>" + "</em>",item.toString(),item.getPrice(),item.getDuplicates()));
 }
 
