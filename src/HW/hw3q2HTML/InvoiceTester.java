@@ -19,9 +19,11 @@ public static void main(String[] args)
       // This text area will contain the formatted invoice
       final JTextArea textArea = new JTextArea(20, 40);
 
+      JTextPane htmlVersion = new JTextPane();
+      
       // When the invoice changes, update the text area
       invoice.addChangeListener(event ->
-         textArea.setText(invoice.format(formatter)));
+         htmlVersion.setText(invoice.format(formatter)));
 
       // Add line items to a combo box
       final JComboBox combo = new JComboBox();
@@ -55,6 +57,8 @@ public static void main(String[] args)
       frame.add(new JScrollPane(textArea),
          BorderLayout.CENTER);
       frame.add(panel, BorderLayout.SOUTH);
+      frame.add(htmlVersion);
+      htmlVersion.setContentType("text/html");
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.pack();
       frame.setVisible(true);

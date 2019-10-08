@@ -8,19 +8,23 @@ public class HTMLFormatter implements InvoiceFormatter
 public String formatHeader()
 {
    total = 0;
-   return "     I N V O I C E\n\n\n";
+   return "<body style='background-color:blue;'><h1 style='text-align:center;color:Yellow;font-size:24px;'>" + 
+		   "I N V O I C E </h1>";
+   
 }
 
 public String formatLineItem(LineItem item)
 {
    total += (item.getPrice() * item.getDuplicates());
    return (String.format(
-         "%s: $%.2f x%d\n",item.toString(),item.getPrice(),item.getDuplicates()));
+         "<p style=color:yellow;font-size:16px;'>" + "<em>\n%s: <span style='color:rgb(0,197,42);'>$%.2f</span>" + 
+        		 "<span style='color:rgb(214,103,255);'> (x%d)</span>" + "</em>",item.toString(),item.getPrice(),item.getDuplicates()));
 }
 
 public String formatFooter()
 {
-   return (String.format("\n\nTOTAL DUE: $%.2f\n", total));
+   return (String.format("<p style=color:yellow;font-size:16px;'><br><br>" + 
+		   "TOTAL DUE: <span style=color:rgb(255,0,162);'>$%.2f<br><br></span></p>", total));
 }
 
 private double total;
