@@ -8,7 +8,7 @@ public class HTMLFormatter implements InvoiceFormatter
 public String formatHeader()
 {
    total = 0;
-   return "<body style='background-color:blue;'><h1 style='text-align:center;color:Yellow;font-size:24px;'>" + 
+   return "<body style='background-color:rgb(0, 151, 255);'><h1 style='text-align:center;color:Yellow;font-size:24px;'>" + 
 		   "I N V O I C E </h1>";
    
 }
@@ -18,7 +18,7 @@ public String formatLineItem(LineItem item)
    total += (item.getPrice() * item.getDuplicates());
    return (String.format(
          "<p style=color:yellow;font-size:16px;'>" + "<em>\n%s: <span style='color:rgb(0,197,42);'>$%.2f</span>" + 
-        		 "<span style='color:rgb(214,103,255);'> (x%d)</span>" + "</em>",item.toString(),item.getPrice(),item.getDuplicates()));
+        		 "<span style='color:rgb(255,0,162);'> (x%d)</span>" + "</em>",item.toString(),item.getPrice(),item.getDuplicates()));
 }
 
 public String formatFooter()
