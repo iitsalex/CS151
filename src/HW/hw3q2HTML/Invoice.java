@@ -1,4 +1,4 @@
-package hw3q2;
+package hw3q2HTML;
 
 import java.util.*;
 import javax.swing.event.*;
