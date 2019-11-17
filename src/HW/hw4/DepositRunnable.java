@@ -1,5 +1,3 @@
-package hw4;
-
 public class DepositRunnable implements Runnable {
 
 	private static final int DELAY = 1;

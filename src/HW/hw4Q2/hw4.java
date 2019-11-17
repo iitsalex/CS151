@@ -1,5 +1,3 @@
-package hw4Q2;
-
 import java.awt.FlowLayout;
 
 import javax.swing.JFrame;

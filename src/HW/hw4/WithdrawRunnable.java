@@ -1,5 +1,3 @@
-package hw4;
-
 public class WithdrawRunnable implements Runnable {
 
 	private static final int DELAY = 1;

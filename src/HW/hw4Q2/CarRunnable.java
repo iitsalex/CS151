@@ -1,5 +1,3 @@
-package hw4Q2;
-
 import javax.swing.JLabel;
 import javax.swing.Timer;
 

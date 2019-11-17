@@ -1,5 +1,3 @@
-package hw4;
-
 public class hw4 {
 	public static void main(String[] args) {
 //		BankAccount account = new BankAccount(); // Deprecated BankAccount - not threadsafe
