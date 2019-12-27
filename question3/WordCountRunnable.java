@@ -7,6 +7,7 @@ public class WordCountRunnable implements Runnable {
 
 	public static Lock threadsLock;
 	public static int threads;
+	
 	public static int totalWordCount;
 	public static Lock totalWordCountLock;
 
@@ -22,17 +23,20 @@ public class WordCountRunnable implements Runnable {
 		threadsLock.unlock();
 		int numOfWords = 0;
 
+		Boolean fileFound = false;
 		try {
 			Scanner input = new Scanner(new FileInputStream(filePath));
 			while (input.hasNext()) {
 				input.next();
-				numOfWords++;
+				numOfWords++; 
 			}
+			fileFound = true;
 			input.close();
 		} catch (FileNotFoundException e) {
-			System.out.println("Did not find file: ");
+			System.out.println("Did not find file @:  " + filePath);
 		}
-		System.out.println(filePath + ": " + numOfWords);
+		if (fileFound)
+			System.out.println(filePath + " - WordCount : " + numOfWords);
 
 		totalWordCountLock.lock();
 		totalWordCount += numOfWords;
@@ -41,7 +45,7 @@ public class WordCountRunnable implements Runnable {
 		threads--;
 
 		if (threads == 0)
-			System.out.println("Total: " + totalWordCount);
+			System.out.println("\nTotal WordCount: " + totalWordCount);
 
 		threadsLock.unlock();
 		totalWordCountLock.unlock();

@@ -1,0 +1,36 @@
+FOR QUESTION 3 ON THE CODING PORTION: 
+
+Included question3 as well as WordCount
+User can choose to do java question3 <arguments>
+OR
+User can choose to do java WordCount <arguments>
+
+
+7.1 Why is there a Class object to represent void even though there is no void type? 
+
+void is a key word that refers to the return type of not returning anything, else everything would have a return value which is inefficient
+
+
+Chapter 9:   
+
+9.1 In the program in Section 9.1, is it possible that both threads are sleeping at the same time? That neither of the two threads is sleeping at a particular time? Explain. 
+
+NOT possible to have both threads sleeping at the same time. If both threads run parallel, they both call start() and the way thread scheduling is set up doesn't guarantee that one runs first or second (or at the same time). There is an order still, so one HAS to run before the other.
+
+9.2 Give an example why you would want to terminate a thread in a Web browser program. 
+
+If anything is running or in the process of being loaded up, a user can interrupt that in many different ways. If they refresh the page during splash screen or a pop up of some sort, that thread would have to be terminated so it can be restarted from the beginning after a refresh. We don't need to keep running a thread for something that got interrupted.
+
+9.3 What is the difference between a thread that sleeps by calling sleep and a thread that waits by calling await? 
+
+Sleep pauses thread, doesn’t wake up until a certain amount of time passes (example: Thread.sleep(1000) = 1 second wait time); on the other hand, await pauses + waits for a signal to awake
+
+Sleep uses a time as a parameter and specifies when it should terminate. When you use sleep on a thread, it doesn't release the lock for other threads to use, it waits until sleep has completed. Await is a more true "wait" feature where the lock being held is passed to a different thread and it can do work while the other is waiting. Await is good for multithreading purposes because it can be used to signal other threads and work simultaneously.
+
+9.4 What happens when a thread calls await and no other thread calls signalAll or signal? 
+
+The thread that calls await will just wait until signalAll or signal is called but they are never called. Thus it just waits forever even if its necessary working conditions are met.
+
+9.5 Suppose you call wait instead of await on a condition object in the BoundedQueue class that uses a ReentrantLock. Will the call compile? What will it do? 
+
+Program won't compile. The condition object created based on the Lock given won't have wait method, it only has await method. Calling wait on a condition object will cause some sort of exception to occur.

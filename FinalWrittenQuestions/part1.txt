@@ -1,0 +1,14 @@
+7.1 
+void is a key word that refers to the return type of not returning anything, else everything would have a return value which is inefficient
+Chapter 9:   
+9.1    
+
+possible that both threads are sleeping at the same time; however, possible that the two threads are not sleeping at the same time.  //not sure on this ill double check with people for an explanation
+
+9.2    
+U terminate thread for something on a web browser that may no longer be needed/displayed on it. Like a non moving advertisement for example
+9.3    
+Sleep pauses thread, doesn’t wake up until a certain amount of time passes (example: Thread.sleep(1000) = 1 second wait time); on the other hand, await pauses + waits for a signal to awake
+
+9.4
+The threads will continue to be blocked
